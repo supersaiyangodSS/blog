@@ -1,0 +1,19 @@
+<div class="author">
+    <h1 class="author__heading">Search Results</h1>
+      {{#unless data}}
+      <p>no search result</p>
+      {{/unless}}
+</div>
+
+<section class="articles">
+    <ul class="article-ul">
+    {{#each data}}
+      <li>
+        <a href="/post/{{this._id}}">
+          <span>{{this.title}}</span>
+          <span class="article-list__date">{{formatDate this.createdAt}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</section>

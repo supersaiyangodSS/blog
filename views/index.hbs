@@ -1,0 +1,26 @@
+
+<div class="author">
+  <h1 class="author__heading">Hi, I am Vedant.</h1>
+  <p class="author__body">A Full Stack Web-developer and Otaku.</p>
+</div>
+
+<img src="/images/xiao.jpg" alt="person looking out through window" class="hero-image" width="981" height="528">
+
+<section class="articles">
+  <h2 class="articles__heading">Latest Posts</h2>
+
+  <ul class="article-ul">
+    {{#each data}}
+      <li>
+        <a href="/post/{{this._id}}">
+          <span>{{this.title}}</span>
+          <span class="article-list__date">{{formatDate this.createdAt}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+
+  {{#if nextPage}}
+  <a href="/?page={{nextPage}}" class="pagination">&lt; View Older Posts</a>
+  {{/if}}
+</section>
